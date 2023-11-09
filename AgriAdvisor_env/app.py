@@ -95,6 +95,5 @@ location = {
 }
 
 soil_data = get_soil_data(location, api_key)
-
 if __name__ == '__main__':
     app.run(debug=True)

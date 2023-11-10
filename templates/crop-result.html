@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<style>
+  .mt-0 {
+    margin-top: 50 !important;
+  }
+</style>
+
+<div class="container py-2 mx-auto my-50 h-10" style="margin: 12rem;">
+  <div class="row">
+    <div class="col-sm py-2 py-md-3">
+      <div class="card card-body" style="justify-content: center;">
+        <h1 class="text-center"><b>Your Farming Recommendation</b></h1>
+        {% if crop_suitability == "Suitable" %}
+        <p class="text-center">Congratulations! Growing {{ crop }} in your farm is a great choice.</p>
+        <p class="text-center">Pros: {{ pros }}</p>
+        <p class="text-center">Cons: {{ cons }}</p>
+        <p class="text-center">Suggested Crops: {{ suggested_crops }}</p>
+        {% else %}
+        <p class="text-center">It's not recommended to grow {{ crop }} in your farm at the moment.</p>
+        <p class="text-center">Pros: {{ pros }}</p>
+        <p class="text-center">Cons: {{ cons }}</p>
+        <p class="text-center">Consider growing other crops like {{ suggested_crops }} which are predicted to be more sutiable for the soil and has good market in the future.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

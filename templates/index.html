@@ -92,4 +92,68 @@
 </section>
 <!-- //Products & Services -->
 
-{% endblock %}
+<!-- Floating Chat -->
+<div id="floating-chat">
+	<div class="chat-header">
+	  <h3>Chat with AGRIADVISOR</h3>
+	  <button id="minimize-chat">-</button>
+	</div>
+	<div class="chat-body">
+	  <div id="chat-messages"></div>
+	  <textarea id="user-input" placeholder="Type your message..."></textarea>
+	  <button id="send-message">Send</button>
+	</div>
+  </div>
+  
+  <script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  const chatBody = document.querySelector("#floating-chat .chat-body");
+	  const minimizeChatBtn = document.querySelector("#minimize-chat");
+	  const sendMessageBtn = document.querySelector("#send-message");
+	  const userInput = document.querySelector("#user-input");
+	  const chatMessages = document.querySelector("#chat-messages");
+	
+	  minimizeChatBtn.addEventListener("click", function() {
+		chatBody.style.display = chatBody.style.display === "none" ? "block" : "none";
+	  });
+	
+	  sendMessageBtn.addEventListener("click", function() {
+		const userMessage = userInput.value.trim();
+	
+		if (userMessage !== "") {
+		  // Add the user's message to the chat
+		  chatMessages.innerHTML += `<div class="user-message">${userMessage}</div>`;
+	
+		  // Send user's message to GPT-3
+		  fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+			method: 'POST',
+			headers: {
+			  'Content-Type': 'application/json',
+			  'Authorization': 'process.env.OPENAI_API_KEY', // Replace with your GPT-3 API key
+			},
+			body: JSON.stringify({
+			  prompt: userMessage,
+			  max_tokens: 150, // Adjust as needed
+			}),
+		  })
+		  .then(response => response.json())
+		  .then(data => {
+			// Display GPT-3's response in the chat
+			const gptResponse = data.choices[0].text.trim();
+			chatMessages.innerHTML += `<div class="gpt-message">${gptResponse}</div>`;
+		  })
+		  .catch(error => {
+			console.error('Error sending message to GPT-3:', error);
+			// Display an error message in the chat
+			chatMessages.innerHTML += `<div class="gpt-message">An error occurred. Please try again.</div>`;
+		  });
+	
+		  // Clear the user input
+		  userInput.value = "";
+		}
+	  });
+	});
+	</script>
+	
+  
+	{% endblock %}

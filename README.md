@@ -6,7 +6,7 @@
 
 - In country like India, majority of the population is dependent on agriculture for their livelihood. Many new technologies, such as Machine Learning and Deep Learning, are being implemented into agriculture so that it is easier for farmers to grow and maximize their yield. 
 
-- In this project, I present a website in which the following applications are implemented; Crop recommendation, Fertilizer recommendation and Plant disease prediction, respectively. 
+- In this project, we present a website in which the following applications are implemented; Crop recommendation, Fertilizer recommendation and Plant disease prediction, respectively. 
 
     - In the crop recommendation application, the user can provide the soil data from their side and the application will predict which crop should the user grow. 
     
@@ -34,6 +34,26 @@
 <code><img height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1280px-Scikit_learn_logo_small.svg.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/pytorch/pytorch/39fa0b5d0a3b966a50dcd90b26e6c36942705d6d/docs/source/_static/img/pytorch-logo-dark.svg"></code>
 
+## Architecture
+AgriAdvisor is built as a web application with a modular architecture, allowing for easy integration of various components. The core components include the web application, machine learning models for crop recommendations and disease predictions, and an interactive chatbot powered by OpenAI GPT.
+
+## Technologies Used
+Web Development
+The frontend of AgriAdvisor is developed using HTML, CSS, and JavaScript. The application leverages a responsive and intuitive user interface to enhance user experience. It incorporates modern web development practices, including client-side rendering for dynamic content updates.
+
+Machine Learning Models
+Crop Recommendations
+AgriAdvisor utilizes machine learning models for personalized crop recommendations. The following models are employed:
+
+Support Vector Machine (SVM): SVM is used for classifying crops based on features such as soil type, climate, and geographical location. It excels in handling complex decision boundaries.
+
+XGBoost: XGBoost is employed to enhance the precision of crop recommendations. This gradient boosting algorithm is effective in optimizing decision trees and improving predictive accuracy.
+
+Disease Predictions
+Disease prediction is accomplished using a convolutional neural network (CNN) based on the ResNet architecture. This model is trained on a diverse dataset of crop disease images, enabling accurate identification of diseases from input images.
+
+Chatbot Integration
+AgriAdvisor integrates an interactive chatbot using OpenAI GPT. The chatbot enhances user engagement by providing instant responses to user queries. The technical implementation involves making API calls to the OpenAI GPT API, sending user queries, and processing the model-generated responses.
 
 ## How to use 💻
 - Crop Recommendation system ==> enter the corresponding Soil type and location then the algorithm will suggest the best crops that can be grown in the field. Refer [this website](https://www.gardeningknowhow.com/garden-how-to/soil-fertilizers/fertilizer-numbers-npk.htm) for more information.
@@ -42,6 +62,9 @@ Note: When you enter the city name, make sure to enter mostly common city names.
 - Fertilizer suggestion system ==> Enter the nutrient contents of your soil and the crop you want to grow. The algorithm will tell which nutrient the soil has excess of or lacks. Accordingly, it will give suggestions for buying fertilizers.
 
 - Disease Detection System ==> Upload an image of leaf of your plant. The algorithm will tell the crop type and whether it is diseased or healthy. If it is diseased, it will tell you the cause of the disease and suggest you how to prevent/cure the disease accordingly.
+
+- Interactive Chatbot
+To enhance user experience, AgriAdvisor features an interactive chatbot powered by OpenAI GPT. Users can ask questions, seek advice, and receive instant responses, making the platform more accessible and user-friendly.
 
 ## How to run locally 🛠️
 - Before the following steps make sure you have [git](https://git-scm.com/download), [Anaconda](https://www.anaconda.com/) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) installed on your system

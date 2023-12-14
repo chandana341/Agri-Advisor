@@ -52,7 +52,7 @@ XGBoost: XGBoost is employed to enhance the precision of crop recommendations. T
 Disease Predictions
 Disease prediction is accomplished using a convolutional neural network (CNN) based on the ResNet architecture. This model is trained on a diverse dataset of crop disease images, enabling accurate identification of diseases from input images.
 
-Chatbot Integration 🤖
+## Chatbot Integration 🤖
 Motivation
 The integration of an interactive chatbot within AgriAdvisor aims to enhance user engagement and provide a seamless experience for users seeking information or assistance related to agriculture. The chatbot is powered by OpenAI GPT, allowing it to generate contextually relevant responses to user queries.
 
@@ -68,7 +68,7 @@ Error Handling: Robust error handling mechanisms were implemented to ensure smoo
 Usage
 Users can engage with the chatbot by navigating to the designated chat interface on the AgriAdvisor website. The chatbot is responsive and capable of understanding a wide range of queries related to agriculture. Users can seek advice on crop selection, inquire about fertilizer recommendations, and obtain information about plant diseases.
 
-Disease Prediction Page 🌱🔍
+## Disease Prediction Page 🌱🔍
 Motivation
 The Disease Prediction functionality in AgriAdvisor plays a crucial role in helping farmers identify and address potential issues affecting their crops. By leveraging deep learning techniques, the system can analyze images of plant leaves to determine whether the crop is healthy or diseased. This empowers farmers with timely information to take preventive measures and mitigate the impact of diseases.
 

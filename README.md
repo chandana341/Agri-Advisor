@@ -52,31 +52,34 @@ XGBoost: XGBoost is employed to enhance the precision of crop recommendations. T
 Disease Predictions
 Disease prediction is accomplished using a convolutional neural network (CNN) based on the ResNet architecture. This model is trained on a diverse dataset of crop disease images, enabling accurate identification of diseases from input images.
 
-Chatbot Integration
-AgriAdvisor integrates an interactive chatbot using OpenAI GPT. The chatbot enhances user engagement by providing instant responses to user queries. The technical implementation involves making API calls to the OpenAI GPT API, sending user queries, and processing the model-generated responses.
+Chatbot Integration 🤖
+Motivation
+The integration of an interactive chatbot within AgriAdvisor aims to enhance user engagement and provide a seamless experience for users seeking information or assistance related to agriculture. The chatbot is powered by OpenAI GPT, allowing it to generate contextually relevant responses to user queries.
 
-## How to use 💻
-- Crop Recommendation system ==> enter the corresponding Soil type and location then the algorithm will suggest the best crops that can be grown in the field. Refer [this website](https://www.gardeningknowhow.com/garden-how-to/soil-fertilizers/fertilizer-numbers-npk.htm) for more information.
-Note: When you enter the city name, make sure to enter mostly common city names. Remote cities/towns may not be available in the [Weather API](https://openweathermap.org/) from where humidity, temperature data is fetched.
+Technical Implementation
+To achieve chatbot functionality, the following steps were undertaken:
 
-- Fertilizer suggestion system ==> Enter the nutrient contents of your soil and the crop you want to grow. The algorithm will tell which nutrient the soil has excess of or lacks. Accordingly, it will give suggestions for buying fertilizers.
+OpenAI GPT Integration: The OpenAI GPT API was utilized to enable natural language processing and generation of responses. API calls were made to the OpenAI GPT endpoint, sending user queries and processing model-generated responses.
 
-- Disease Detection System ==> Upload an image of leaf of your plant. The algorithm will tell the crop type and whether it is diseased or healthy. If it is diseased, it will tell you the cause of the disease and suggest you how to prevent/cure the disease accordingly.
+User Interaction: The chatbot was designed to be interactive, allowing users to ask questions, seek advice, and receive instant responses. The chatbot's responses are tailored to provide valuable information on crop recommendations, fertilizer suggestions, and disease predictions.
 
-- Interactive Chatbot
-To enhance user experience, AgriAdvisor features an interactive chatbot powered by OpenAI GPT. Users can ask questions, seek advice, and receive instant responses, making the platform more accessible and user-friendly.
+Error Handling: Robust error handling mechanisms were implemented to ensure smooth user interactions. The chatbot is capable of handling a variety of queries and providing informative responses even in cases where the user input is ambiguous or unclear.
 
-## How to run locally 🛠️
-- Before the following steps make sure you have [git](https://git-scm.com/download), [Anaconda](https://www.anaconda.com/) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) installed on your system
-- Clone the complete project with `git clone` or you can just download the code and unzip it.
-- Once the project is cloned, open anaconda prompt in the directory where the project was cloned and paste the following block
-  ```
-  conda create -n agriadvisor python=3.6.12
-  conda activate agriadvisor
-  pip install -r requirements.txt
-  ```
-- And finally run the project with
-  ```
-  python app.py
-  ```
-- Open the localhost url provided after running `app.py` and now you can use the project locally in your web browser.
+Usage
+Users can engage with the chatbot by navigating to the designated chat interface on the AgriAdvisor website. The chatbot is responsive and capable of understanding a wide range of queries related to agriculture. Users can seek advice on crop selection, inquire about fertilizer recommendations, and obtain information about plant diseases.
+
+Disease Prediction Page 🌱🔍
+Motivation
+The Disease Prediction functionality in AgriAdvisor plays a crucial role in helping farmers identify and address potential issues affecting their crops. By leveraging deep learning techniques, the system can analyze images of plant leaves to determine whether the crop is healthy or diseased. This empowers farmers with timely information to take preventive measures and mitigate the impact of diseases.
+
+Technical Implementation
+The Disease Prediction Page involves the following key components:
+
+Convolutional Neural Network (CNN): A CNN based on the ResNet architecture was employed for disease prediction. The model was trained on a diverse dataset of crop disease images, allowing it to recognize patterns associated with various diseases.
+
+Image Upload and Processing: Users can upload images of plant leaves through the AgriAdvisor interface. The system processes these images, extracts relevant features, and passes them through the trained CNN for disease prediction.
+
+User Feedback: The system provides users with feedback on the health status of their crops, indicating whether the plant is healthy or showing signs of disease. In case of disease detection, the system offers insights into the specific disease and provides recommendations for prevention or cure.
+
+Usage
+Farmers and users interested in monitoring the health of their crops can utilize the Disease Prediction Page by uploading images of plant leaves. The system will promptly analyze the images and deliver information on the health status of the crops, along with actionable recommendations for addressing any identified diseases.
